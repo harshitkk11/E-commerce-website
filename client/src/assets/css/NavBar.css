@@ -6,7 +6,7 @@
     background: #000000;
     color: #ffffff;
     display: flex;
-    position: fixed;
+    position: sticky;
 }
 
 .nav-logo {

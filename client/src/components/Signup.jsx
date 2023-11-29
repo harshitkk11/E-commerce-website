@@ -1,10 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 
-import { useState } from "react";
-
 function Signup() {
-  //   const [classname, setClassname] = useState("container");
-
   const navigate = useNavigate();
 
   function handleClick() {
@@ -15,43 +11,37 @@ function Signup() {
     <div className="login-signup">
       <div className="container right-panel-active">
         <div className="form-container sign-up-container">
+          <div className="flag-div">
+            <div className="flag"></div>
+          </div>
           <form action="/">
-            <h1>Create An Account</h1>
-            <div className="social-container">
-              <Link
-                style={{
-                  textDecoration: "none",
-                  fontSize: "large",
-                  margin: "20px",
-                }}
-                to="/fb"
-              >
-                facebook
-              </Link>
-              <Link
-                style={{
-                  textDecoration: "none",
-                  fontSize: "large",
-                  margin: "20px",
-                }}
-                to="/goggle"
-              >
-                goggle
-              </Link>
-            </div>
-            <span>use your email for Regestration</span>
+            <p className="heading">Create An Account</p>
+            <span>Use your email for registration</span>
             <input type="text" placeholder="NAME" />
-            <input type="email" placeholder="E-MAIL" />
+            <input type="email" placeholder="EMAIL" required autoComplete="none"/>
             <input type="password" placeholder="PASSWORD" />
             <br />
             <button>Sign Up</button>
           </form>
+          <div className="ask">
+            <span>
+              Already have an account?
+              <Link
+                to="/login"
+                style={{
+                  marginLeft: "10px",
+                }}
+              >
+                Log in
+              </Link>
+            </span>
+          </div>
         </div>
         <div className="overlay-container">
           <div className="overlay">
             <div className="overlay-panel overlay-left">
-              <h1>Have already An Account ?</h1>
-              <p>To keep connect with us please login here !</p>
+              <p className="heading">Have already An Account ?</p>
+              <span>To keep connect with us please login here !</span>
               <button class="ghost" id="signin" onClick={handleClick}>
                 Sign In
               </button>
