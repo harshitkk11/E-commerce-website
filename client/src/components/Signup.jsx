@@ -12,7 +12,7 @@ function Signup() {
   }
 
   return (
-    <div className="login-singup">
+    <div className="login-signup">
       <div className="container right-panel-active">
         <div className="form-container sign-up-container">
           <form action="/">
