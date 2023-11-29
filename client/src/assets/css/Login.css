@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100dvh;
+  height: 91dvh;
   width: 100%;
 }
 
@@ -167,10 +167,17 @@ button.ghost {
 
   .form-container {
     width: 100%;
+    background-color: #e6e6e6;
+
+  }
+
+  input {
+    background-color: #fff;
   }
 
   form {
-    height: 60%;
+    height: 65%;
+    background-color: #e6e6e6;
   }
 
   .ask {

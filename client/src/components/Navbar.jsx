@@ -16,18 +16,28 @@ const Navbar = () => {
           <span>E-commerce</span>
         </div>
         <div className="nav-items">
-          <button onClick={handleOpen}>Dropdown</button>
+            <div className="dropdown">
+          <button  className="dropdown-button" onClick={handleOpen}>Log in</button>
           {open ? (
             <ul className="menu">
               <li className="menu-item">
-                <button>Menu 1</button>
+                <button>Log in</button>
               </li>
               <li className="menu-item">
-                <button>Menu 2</button>
+                <button>My Profile</button>
+              </li>
+              <li className="menu-item">
+                <button>Order</button>
+              </li>
+              <li className="menu-item">
+                <button>Order</button>
+              </li>
+              <li className="menu-item">
+                <button>Order</button>
               </li>
             </ul>
           ) : null}
-          {open ? <div>Is Open</div> : <div>Is Closed</div>}
+          </div>
           {/* <select value="Login">
                     <option value="Login">Login</option>
                     <option value="My Profile">My Profile</option>

@@ -40,6 +40,7 @@ function Login() {
                 to="/signup"
                 style={{
                   marginLeft: "10px",
+                  textDecoration: "none",
                 }}
               >
                 Sign up

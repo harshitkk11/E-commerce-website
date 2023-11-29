@@ -30,6 +30,7 @@ function Signup() {
                 to="/login"
                 style={{
                   marginLeft: "10px",
+                  textDecoration: "none",
                 }}
               >
                 Log in
