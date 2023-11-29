@@ -1,13 +1,16 @@
 .navbar {
     width: 100%;
+    /* max-width: 1200px; */
+    /* margin: 0 auto; */
     height: 8dvh;
     background: #000000;
     color: #ffffff;
     display: flex;
+    position: fixed;
 }
 
 .nav-logo {
-    width: 50%;
+    width: 60%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -19,7 +22,7 @@
 }
 
 .nav-items {
-    width: 50%;
+    width: 40%;
 }
 
 .nav-items ul {
