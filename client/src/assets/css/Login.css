@@ -4,7 +4,6 @@
   align-items: center;
   height: 100dvh;
   width: 100%;
-  background-color: yellow;
 }
 
 .container {
@@ -83,7 +82,7 @@ input {
   width: 100%;
 }
 
-button {
+.submit-button, .ghost {
   border-radius: 2em;
   border: 1px solid #fff;
   background: #21a9d3;

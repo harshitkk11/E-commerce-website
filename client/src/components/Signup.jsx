@@ -21,7 +21,7 @@ function Signup() {
             <input type="email" placeholder="EMAIL" required autoComplete="none"/>
             <input type="password" placeholder="PASSWORD" />
             <br />
-            <button>Sign Up</button>
+            <button className="submit-button">Sign Up</button>
           </form>
           <div className="ask">
             <span>
@@ -43,7 +43,7 @@ function Signup() {
               <p className="heading">Have already An Account ?</p>
               <span>To keep connect with us please login here !</span>
               <button class="ghost" id="signin" onClick={handleClick}>
-                Sign In
+                LOG In
               </button>
             </div>
           </div>

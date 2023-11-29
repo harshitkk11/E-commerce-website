@@ -31,7 +31,7 @@ function Login() {
               Forgot Password?
             </Link>
             <br />
-            <button>Log in</button>
+            <button className="submit-button">Log in</button>
           </form>
           <div className="ask">
             <span>
