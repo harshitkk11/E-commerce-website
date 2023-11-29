@@ -24,6 +24,10 @@
 .nav-items {
     width: 40%;
 }
+.dropdown{
+    overflow: hidden;
+}
+
 
 .nav-items ul {
     width: 100%;
@@ -49,4 +53,7 @@
 .nav-item {
     text-decoration: none;
     color: #ffffff;
+}
+li{
+    text-decoration: none;
 }

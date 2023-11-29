@@ -10,7 +10,7 @@ const Navbar = () =>{
             </div>
             <div className="nav-items">
                 <ul>
-                    {/* <div className="dropdown">
+                    <div className="dropdown">
                         <button className="dropbtn">Login</button>
                         <ul>
                             <li><NavLink>My profile</NavLink></li>
@@ -18,7 +18,7 @@ const Navbar = () =>{
                              <li><NavLink>whisList</NavLink></li>
                              <li><NavLink>Log Out</NavLink></li>
                          </ul>
-                    </div> */}
+                    </div>
                     <li>Cart</li>
                     <li><NavLink to="/login" className="nav-item">Log in</NavLink></li>
                     <li><NavLink to="/signup" className="nav-item">Sign up</NavLink></li>
