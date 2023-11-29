@@ -1,24 +1,48 @@
-.login-singup {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100dvh;
-  width: 100%;
+.login-signup {
+  display: grid;
+  place-items: center;
+  height: 90vh;
 }
 
-h1 {
-  font-weight: bold;
+.form-container {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  /* left: 0; */
+  width: 50%;
+  transition: all 0.6s ease-in-out;
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
 }
+
+form {
+  background-color: #ffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 10%;
+  height: 100%;
+  text-align: center;
+}
+
+.login-heading {
+  font-size: 40px;
+  font-weight: 700;
+}
+
+span {
+  font-size: large;
+  margin: 10px;
+}
+
 p {
   font-size: 1rem;
   font-weight: 100;
   line-height: 1.3rem;
   letter-spacing: 0.1em;
   margin: 20px 0;
-}
-span {
-  font-size: large;
-  margin-bottom: 10px;
 }
 
 button {
@@ -44,26 +68,6 @@ button.ghost {
   border-color: #ffffff;
 }
 
-.form-container {
-  position: absolute;
-  top: 0;
-  height: 100%;
-  transition: all 0.6s ease-in-out;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-form {
-  background-color: #ffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  /* padding: 20px 50px; */
-  height: 100%;
-  text-align: center;
-}
 input {
   background-color: #eee;
   border: none;
@@ -78,13 +82,9 @@ input {
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   position: relative;
   overflow: hidden;
-  width: 50%;
-  height: 70%;
-}
-
-.sign-in-container {
-  left: 0;
-  width: 50%;
+  width: 650px;
+  max-width: 100%;
+  min-height: 550px;
 }
 
 .overlay-container {
@@ -133,23 +133,4 @@ input {
 .overlay-right {
   right: 0;
   transform: translateX(0);
-}
-.social-container {
-  margin: 20px 0;
-}
-.social-container Link {
-  border: 1px solid #dddd;
-  border-radius: 50%;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 5px;
-  height: 40px;
-  width: 40px;
-  font-size: larger;
-}
-@media (max-width: 900px) {
-  .container {
-    width: 80%;
-  }
 }
