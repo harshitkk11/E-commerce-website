@@ -10,15 +10,17 @@ const Navbar = () =>{
             </div>
             <div className="nav-items">
                 <ul>
-                    <div className="dropdown">
-                        <button className="dropbtn">Login</button>
-                        <ul>
-                            <li><NavLink>My profile</NavLink></li>
-                            <li><NavLink>Order</NavLink></li>
-                             <li><NavLink>whisList</NavLink></li>
-                             <li><NavLink>Log Out</NavLink></li>
-                         </ul>
-                    </div>
+                    <li>
+                        <div className="dropdown">
+                           <NavLink className="dropbtn" style={{fontSize:"20px"}} >Login</NavLink>
+                             <div className="dropdown-content">
+                                 <li><NavLink to="/"  style={{textDecoration:"none" ,color:"black"}}>My profile</NavLink></li>
+                                 <li><NavLink to="/"  style={{textDecoration:"none" ,color:"black"}}>Order</NavLink></li>
+                                 <li><NavLink to="/" style={{textDecoration:"none" ,color:"black"}}>whisList</NavLink></li>
+                                 <li><NavLink to="/" style={{textDecoration:"none" ,color:"black"}}>Log Out</NavLink></li>
+                              </div>
+                        </div>
+                    </li>
                     <li>Cart</li>
                     <li><NavLink to="/login" className="nav-item">Log in</NavLink></li>
                     <li><NavLink to="/signup" className="nav-item">Sign up</NavLink></li>
