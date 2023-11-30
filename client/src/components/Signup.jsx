@@ -18,7 +18,7 @@ function Signup() {
             <p className="heading">Create An Account</p>
             <span>Use your email for registration</span>
             <input type="text" placeholder="NAME" />
-            <input type="email" placeholder="EMAIL" required autoComplete="none"/>
+            <input type="email" placeholder="EMAIL" required/>
             <input type="password" placeholder="PASSWORD" />
             <br />
             <button className="submit-button">Sign Up</button>
@@ -41,9 +41,9 @@ function Signup() {
         <div className="overlay-container">
           <div className="overlay">
             <div className="overlay-panel overlay-left">
-              <p className="heading">Have already An Account ?</p>
-              <span>To keep connect with us please login here !</span>
-              <button class="ghost" id="signin" onClick={handleClick}>
+              <p className="heading">Already have an account?</p>
+              <span>To keep connected with us please login here !</span>
+              <button className="ghost" id="signin" onClick={handleClick}>
                 LOG In
               </button>
             </div>
