@@ -47,7 +47,7 @@
   bottom: 0;
   width: 0;
   height: 0;
-  border-bottom: 13px solid #fff;
+  border-bottom: 13px solid #e6e6e6;
   border-left: 25px solid transparent;
   border-right: 25px solid transparent;
 }
@@ -74,7 +74,7 @@ span {
 }
 
 input {
-  background-color: #eee;
+  background-color: #fff;
   border: none;
   font-size: 16px;
   padding: 12px 12px;
