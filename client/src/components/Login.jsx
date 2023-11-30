@@ -12,30 +12,47 @@ function Login() {
     <div className="login-signup">
       <div className="container">
         <div className="form-container">
+          <div className="flag-div">
+            <div className="flag"></div>
+          </div>
           <form action="/">
-            <p className="login-heading">Log In</p>
+            <p className="heading">Log In</p>
             <span>Login to your Account</span>
             <input type="email" placeholder="USERNAME" />
             <input type="password" placeholder="PASSWORD" />
             <Link
               style={{
                 textDecoration: "none",
-                fontSize: "large",
-                margin: "20px",
+                fontSize: "17px",
+                margin: "15px 0",
               }}
               to="/forget-password"
             >
-              forget your password
+              Forgot Password?
             </Link>
             <br />
-            <button>Log in</button>
+            <button className="submit-button">Log in</button>
           </form>
+          <div className="ask">
+            <span>
+              Need an account?
+              <Link
+                to="/signup"
+                style={{
+                  marginLeft: "10px",
+                  textDecoration: "none",
+                }}
+              >
+                Sign up
+              </Link>
+            </span>
+          </div>
         </div>
         <div className="overlay-container">
           <div className="overlay">
             <div className="overlay-panel overlay-right">
-              <h1>Create your Account</h1>
-              <p>Enter your personal details here</p>
+              <p className="heading">Create your Account</p>
+              <span>Enter your personal details here.</span>
               <button class="ghost" id="signup" onClick={handleClick}>
                 Sign Up
               </button>

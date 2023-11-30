@@ -88,3 +88,6 @@
 .dropdown:hover .dropdown-content {
     display: block;
 }
+.login-img{
+    background: #fff;
+}
