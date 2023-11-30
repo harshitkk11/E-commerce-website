@@ -1,5 +1,4 @@
 import { Link, useNavigate } from "react-router-dom";
-import "../assets/css/Login.css";
 
 function Login() {
   const navigate = useNavigate();
@@ -49,14 +48,12 @@ function Login() {
           </div>
         </div>
         <div className="overlay-container">
-          <div className="overlay">
-            <div className="overlay-panel overlay-right">
-              <p className="heading">Create your Account</p>
-              <span>Enter your personal details here.</span>
-              <button class="ghost" id="signup" onClick={handleClick}>
-                Sign Up
-              </button>
-            </div>
+          <div className="overlay-panel">
+            <p className="heading">Create your Account</p>
+            <span>Enter your personal details here.</span>
+            <button className="ghost" id="signup" onClick={handleClick}>
+              Sign Up
+            </button>
           </div>
         </div>
       </div>

@@ -9,8 +9,17 @@ function Signup() {
 
   return (
     <div className="login-signup">
-      <div className="container right-panel-active">
-        <div className="form-container sign-up-container">
+      <div className="container">
+        <div className="overlay-container">
+          <div className="overlay-panel">
+            <p className="heading">Already have an account?</p>
+            <span>To keep connected with us please login here !</span>
+            <button className="ghost" id="login" onClick={handleClick}>
+              LOG In
+            </button>
+          </div>
+        </div>
+        <div className="form-container">
           <div className="flag-div">
             <div className="flag"></div>
           </div>
@@ -18,7 +27,7 @@ function Signup() {
             <p className="heading">Create An Account</p>
             <span>Use your email for registration</span>
             <input type="text" placeholder="NAME" />
-            <input type="email" placeholder="EMAIL" required/>
+            <input type="email" placeholder="EMAIL" required />
             <input type="password" placeholder="PASSWORD" />
             <br />
             <button className="submit-button">Sign Up</button>
@@ -36,17 +45,6 @@ function Signup() {
                 Log in
               </Link>
             </span>
-          </div>
-        </div>
-        <div className="overlay-container">
-          <div className="overlay">
-            <div className="overlay-panel overlay-left">
-              <p className="heading">Already have an account?</p>
-              <span>To keep connected with us please login here !</span>
-              <button className="ghost" id="signin" onClick={handleClick}>
-                LOG In
-              </button>
-            </div>
           </div>
         </div>
       </div>

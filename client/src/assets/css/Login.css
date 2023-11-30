@@ -1,25 +1,25 @@
 .login-signup {
+  /* background-color: black; */
+  width: 100%;
+  height: 91dvh;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 91dvh;
-  width: 100%;
 }
 
 .container {
+  /* background-color: black; */
   background-color: #ffffff;
+  width: 650px;
+  height: 550px;
   border-radius: 2em;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-  position: relative;
   overflow: hidden;
-  width: 650px;
-  max-width: 100%;
-  height: 550px;
+  display: flex;
 }
 
 .form-container {
-  position: absolute;
-  top: 0;
+  /* background-color: black; */
   height: 100%;
   width: 50%;
 }
@@ -36,18 +36,12 @@
   height: 50px;
   box-sizing: content-box;
   padding-top: 15px;
-  position: relative;
   background: #333;
 }
 
 .flag:after {
   content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0;
-  height: 0;
-  border-bottom: 13px solid #fff;
+  border-bottom: 35px solid #fff;
   border-left: 25px solid transparent;
   border-right: 25px solid transparent;
 }
@@ -76,15 +70,17 @@ span {
 input {
   background-color: #f2f2f2;
   border: none;
+  border-radius: 5px;
   font-size: 16px;
   padding: 12px 12px;
   margin: 8px 0;
   width: 100%;
 }
 
-.submit-button, .ghost {
+.submit-button,
+.ghost {
   border-radius: 2em;
-  border: 1px solid #fff;
+  border: 0;
   background: #21a9d3;
   color: #ffffff;
   font-size: 13px;
@@ -95,30 +91,27 @@ input {
   cursor: pointer;
 }
 
-button:active {
+.submit-button:active,
+.ghost:active {
   transform: scale(0.95);
 }
 
-button:focus {
+.submit-button:focus,
+.ghost:focus {
   outline: none;
 }
 
-button.ghost {
+.ghost {
   background-color: transparent;
-  border-color: #ffffff;
+  border: 1px solid #fff;
   margin: 20px 0 0 0;
 }
 
-.overlay-container {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 50%;
-  height: 100%;
-  overflow: hidden;
+.ask {
+  display: none;
 }
 
-.overlay {
+.overlay-container {
   background: #168aad;
   background: -webkit-linear-gradient(20deg, #34a0a4);
   background: linear-gradient(0deg, #34a0a4, #168aad);
@@ -126,30 +119,19 @@ button.ghost {
   background-size: cover;
   background-position: 0 0;
   color: #ffff;
-  position: relative;
-  left: -100%;
+  width: 50%;
   height: 100%;
-  width: 200%;
+  padding: 25% 0;
 }
+
 .overlay-panel {
-  position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   padding: 0 40px;
   text-align: center;
-  top: 0;
-  height: 100%;
-  width: 50%;
-}
-
-.overlay-right {
-  right: 0;
-}
-
-.ask {
-  display: none;
+  /* background-color: #333; */
 }
 
 @media (max-width: 800px) {
@@ -171,7 +153,7 @@ button.ghost {
   }
 
   .flag::after {
-  border-bottom: 13px solid #e6e6e6;
+    border-bottom: 35px solid #e6e6e6;
   }
 
   input {
