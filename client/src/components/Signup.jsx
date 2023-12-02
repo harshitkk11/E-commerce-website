@@ -12,7 +12,7 @@ function Signup() {
       <div className="container">
         <div className="overlay-container">
           <div className="overlay-panel">
-            <p className="heading">Already have an account?</p>
+            <p className="overlay-heading">Already have an account?</p>
             <span>To keep connected with us please login here !</span>
             <button className="ghost" id="login" onClick={handleClick}>
               LOG In
@@ -24,7 +24,7 @@ function Signup() {
             <div className="flag"></div>
           </div>
           <form action="/">
-            <p className="heading">Create An Account</p>
+            <p className="form-heading">Create An Account</p>
             <span>Use your email for registration</span>
             <input type="text" placeholder="NAME" />
             <input type="email" placeholder="EMAIL" required />

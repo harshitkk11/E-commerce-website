@@ -1,95 +1,273 @@
 .navbar {
   width: 100%;
   margin: 0 auto;
-  height: 9dvh;
+  height: 70px;
   background: #fff;
   color: #000;
   display: flex;
-  overflow: hidden;
+  /* overflow: hidden; */
+  position: fixed;
+  flex-wrap: wrap;
 }
 
 .nav-logo {
   width: 60%;
+  height: 100%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  font-size: 3dvh;
-  margin-left: 5%;
+  padding-left: 40px;
 }
+
 .nav-logo span {
   font-style: oblique;
   color: rgb(64, 64, 242);
+  font-size: 22px;
+  font-weight: 700;
+  height: 100%;
   margin: 0;
-  font-size: 25px;
-  margin-left: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.searchbar-1 {
+  margin-left: 4%;
+  width: 75%;
+  height: 100%;
+}
+
+.Searchbar-nav {
+  width: 100%;
+  height: 100%;
+}
+
+.Searchbar-nav form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  background: transparent;
+}
+
+.Searchbar-nav input{
+  width: 92%;
+  height: 75%;
+  margin: 0;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  padding: 0;
+  background: #eff2ff;
+  font-size: 18px;
+}
+
+.Searchbar-nav input:focus {
+  outline: none;
+}
+
+.Searchbar-nav button {
+  width: 8%;
+  height: 75%;
+  border: 0;
+  font-size: 20px;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  background: #eff2ff;
+  color: #333;
+  cursor: pointer;
+}
+
+.searchbar-2 {
+  background: #fff;
+  padding: 0 10px;
+  width: 100%;
+  height: 50px;
+  display: none;
 }
 
 .nav-items {
   width: 40%;
   display: flex;
-  text-decoration: none;
-  justify-content: flex-start;
+  justify-content: flex-end;
   align-items: center;
+  gap: 10px;
+  /* border: 1px solid; */
 }
+
 .dropdown {
-  float: left;
-  overflow: hidden;
+  /* border: 1px solid; */
+  border-radius: 10px;
+  height: 75%;
+  width: 90px;
+  color: #fff;
 }
+
+.dropdown:hover, .dropbtn:hover {
+  background: dodgerblue;
+  border: 1px solid dodgerblue;
+  color: #fff;
+}
+
 .dropbtn {
-  background-color: #fff;
-  border: none;
-  color: rgb(0, 0, 0);
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  font-size: large;
-  margin: 8px 20px;
-  cursor: pointer;
-  justify-content: center;
+  background: transparent;
+  color: #333;
+  border: 0;
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  font-size: 16px;
+  display: flex;
   align-items: center;
+  justify-content: center;
+  gap: 4px;
+  cursor: pointer;
 }
 
 .dropdown-content {
   display: none;
   position: absolute;
   background-color: #f9f9f9;
-  min-width: 160px;
+  min-width: 200px;
   box-shadow: 3px solid black;
   z-index: 1;
+  border-radius: 5px;
 }
-.dropdown-content li{
-  float:none;
+
+.option1 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px;
+  font-size: 16px;
+  border: 0;
+  font-size: 16px;
+  border-bottom: 1px solid;
+  border-color: #e6e6e6;
+}
+
+/* .option1 button {
+  width: 60%;
+  height: 30px;
+  font-size: 15px;
+  border-radius: 5px;
+  border: 0;
+  background: dodgerblue;
+  color: #fff;
+} */
+
+.option1 span {
+  font-size: 15px;
+  margin: 5px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.option {
+  width: 100%;
+  display: flex;
+  padding: 10px;
+  font-size: 16px;
+  border: 0;
+  cursor: pointer;
+  background: transparent;
+}
+
+.option:hover {
+  background: #f2f2f2;
+}
+
+.dropdown-content li {
+  float: none;
   color: #000000;
   display: block;
-  padding: 12px 16px;
-  background-color: rgba(254, 254, 255, 0.883)
+  border-radius: 5px;
+  background-color: rgba(254, 254, 255, 0.883);
 }
- .dropdown-content li:hover{
-  background-color:lightgray;
-}
+
 .dropdown:hover .dropdown-content {
   display: block;
 }
-.login-img{
-  background: #fff;
-}
-.Searchbar-nav{
-  margin-left: 4%;
-  width: 60%;
+
+.Cart {
+  width: 90px;
+  height: 75%;
+  margin-right: 20px;
 }
 
-.Cart button{
-  background-color: #fff;
-  border: none;
-  color: rgb(0, 0, 0);
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  font-size: large;
-  margin: 8px 20px;
+.Cart button {
+  border: 0;
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
   cursor: pointer;
+  background: transparent;
+  color: #333;
 }
-.Cart img{
-  width: 30px;
-  height: 30px;
+
+.Cart button:hover {
+  background-color: #f2f2f2;
+}
+
+.text {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width:800px) {
+  .navbar {
+    position: sticky;
+    height: 50px;
+  }
+  .nav-logo {
+    padding-left: 20px;
+    width: 40%;
+  }
+
+  .nav-logo span {
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  .nav-items {
+    width: 60%;
+  }
+
+  .searchbar-1 {
+    display: none;
+  }
+
+  .searchbar-2 {
+    display: flex;
+  }
+
+  .dropdown{
+    width: 100px;
+  }
+
+  .Cart {
+    width: 60px;
+  }
+
+  .text {
+    display: none;
+  }
+}
+
+@media(max-width: 650px) {
+  .Searchbar-nav button {
+    width: 15%;
+  }
 }

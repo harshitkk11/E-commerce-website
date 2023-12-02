@@ -15,7 +15,7 @@ function Login() {
             <div className="flag"></div>
           </div>
           <form action="/">
-            <p className="heading">Log In</p>
+            <p className="form-heading">Log In</p>
             <span>Login to your Account</span>
             <input type="email" placeholder="USERNAME" />
             <input type="password" placeholder="PASSWORD" />
@@ -49,7 +49,7 @@ function Login() {
         </div>
         <div className="overlay-container">
           <div className="overlay-panel">
-            <p className="heading">Create your Account</p>
+            <p className="overlay-heading">Create your Account</p>
             <span>Enter your personal details here.</span>
             <button className="ghost" id="signup" onClick={handleClick}>
               Sign Up
