@@ -66,10 +66,9 @@ function Signup() {
           display: "none",
           border: "",
         });
-        // localStorage.setItem("verify", "true");
+        localStorage.setItem("verify", "true");
         navigate("/verifymail");
-        // window.location.reload()
-        // toast.success(data.message);
+        window.location.reload();
       } else {
         console.log(data.message);
         setForm({
