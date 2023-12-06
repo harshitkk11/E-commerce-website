@@ -4,6 +4,7 @@ import App from './App.jsx'
 import './index.css'
 import "./assets/css/Login.css";
 import "./assets/css/Navbar.css";
+import "./assets/css/VerifyMail.css";
 import { BrowserRouter } from 'react-router-dom'
 
 ReactDOM.createRoot(document.getElementById('root')).render(

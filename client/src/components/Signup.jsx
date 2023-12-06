@@ -1,11 +1,89 @@
+import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+import { BiSolidError } from "react-icons/bi";
+import { EmailContext } from "../context/VerifyMailContext";
 
 function Signup() {
   const navigate = useNavigate();
 
-  function handleClick() {
+  const { setEmail } = useContext(EmailContext);
+
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    password: "",
+    button: "Sign Up",
+    disabled: false,
+    error: "",
+    display: "none",
+    border: "",
+  });
+
+  const handleClick = () => {
     navigate("/login");
-  }
+  };
+
+  const handleonChange = (e) => {
+    setForm({
+      ...form,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const sendRequest = async () => {
+    const res = await axios
+      .post("/signup", {
+        name: form.name,
+        email: form.email,
+        password: form.password,
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    const data = await res.data;
+    return data;
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setForm({
+      ...form,
+      button: "Please Wait..",
+      disabled: true,
+    });
+    sendRequest().then((data) => {
+      if (data.message === "Signed up successfully") {
+        setEmail(form.email);
+        setForm({
+          ...form,
+          name: "",
+          email: "",
+          password: "",
+          button: "Sign Up",
+          disabled: false,
+          error: "",
+          display: "none",
+          border: "",
+        });
+        // localStorage.setItem("verify", "true");
+        navigate("/verifymail");
+        // window.location.reload()
+        // toast.success(data.message);
+      } else {
+        console.log(data.message);
+        setForm({
+          ...form,
+          button: "Sign Up",
+          disabled: false,
+          error: data.message,
+          display: "flex",
+          border: "1px solid #b30000",
+        });
+        // toast.error(data.message);
+      }
+    });
+  };
 
   return (
     <div className="login-signup">
@@ -23,14 +101,47 @@ function Signup() {
           <div className="flag-div">
             <div className="flag"></div>
           </div>
-          <form action="/">
+          <form onSubmit={handleSubmit}>
             <p className="form-heading">Create An Account</p>
             <span>Use your email for registration</span>
-            <input type="text" placeholder="NAME" />
-            <input type="email" placeholder="EMAIL" required />
-            <input type="password" placeholder="PASSWORD" />
+            <span className="input-error" style={{ display: form.display }}>
+              <BiSolidError style={{ fontSize: "20px" }} />
+              {form.error}
+            </span>
+            <input
+              name="name"
+              type="text"
+              placeholder="NAME"
+              value={form.name}
+              onChange={handleonChange}
+              required
+              disabled={form.disabled}
+            />
+            <input
+              name="email"
+              type="email"
+              placeholder="EMAIL"
+              value={form.email}
+              onChange={handleonChange}
+              required
+              disabled={form.disabled}
+              style={{
+                border: form.border,
+              }}
+            />
+            <input
+              name="password"
+              type="password"
+              placeholder="PASSWORD"
+              value={form.password}
+              onChange={handleonChange}
+              required
+              disabled={form.disabled}
+            />
             <br />
-            <button className="submit-button">Sign Up</button>
+            <button className="submit-button" disabled={form.disabled}>
+              {form.button}
+            </button>
           </form>
           <div className="ask">
             <span>

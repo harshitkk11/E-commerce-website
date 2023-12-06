@@ -94,16 +94,43 @@ input {
   text-transform: uppercase;
   transition: transform 80ms ease-in-out;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .submit-button:active,
 .ghost:active {
   transform: scale(0.95);
+  outline: none;
 }
 
 .submit-button:focus,
 .ghost:focus {
   outline: none;
+}
+
+.submit-button:disabled, input:disabled {
+  background: #999999;
+  transform: none;
+}
+
+.input-error {
+  color: #800000;
+  background-color: #ffb3b3;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 16px;
+  margin: 0;
+  padding: 25px 8px;
+  border: 2px solid #cc0000;
+  border-radius: 5px;
+  gap: 10px;
+  overflow-y: scroll;
+  -ms-overflow-style: none; 
+}
+.input-error::-webkit-scrollbar { 
+  display: none;  /* Safari and Chrome */
 }
 
 .ghost {
