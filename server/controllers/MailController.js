@@ -48,7 +48,7 @@ const verifyMailer = async (req, res) => {
             button: {
               color: "#22BC66",
               text: "Confirm your account",
-              link: "http://localhost:5173/verifymail?id=" + id + "",
+              link: "http://localhost:5173/verify?id=" + id + "",
             },
           },
         },

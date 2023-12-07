@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import { Suspense, lazy, useEffect } from "react";
 import axios from "axios";
 import Navbar from "./components/Navbar";
@@ -36,6 +36,7 @@ function App() {
               </Suspense>
             }
           />
+
           <Route
             path="/login"
             element={
@@ -44,6 +45,7 @@ function App() {
               </Suspense>
             }
           />
+
           <Route
             path="/signup"
             element={
@@ -52,18 +54,20 @@ function App() {
               </Suspense>
             }
           />
-          {verify === "true" && (
-            <>
-              <Route
-                path="/verifymail"
-                element={
-                  <Suspense>
-                    <VerifyMail />
-                  </Suspense>
-                }
-              />
-            </>
-          )}
+
+          <Route
+            path="/verifymail"
+            element={
+              verify != "true" ? (
+                <Navigate replace to="/signup" />
+              ) : (
+                <Suspense>
+                  <VerifyMail />
+                </Suspense>
+              )
+            }
+          />
+
           <Route
             path="*"
             element={
