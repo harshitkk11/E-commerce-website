@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Verification from "../assets/images/verification.png";
+import Verification from "../assets/images/mail.png";
 import { useContext } from "react";
 import { EmailContext } from "../context/VerifyMailContext";
 

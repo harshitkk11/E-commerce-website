@@ -22,7 +22,7 @@
 }
 
 .verify-mail-container p {
-    width: 100%;
+    width: 90%;
     text-align: center;
 }
 
@@ -34,6 +34,35 @@
 .vmc-img {
   width: 40%;
   height: 40%;
+}
+
+.verify-mail-container button {
+  text-align: center;
+  border-radius: 2em;
+  border: 0;
+  background: #21a9d3;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 1.3em 5em;
+  text-transform: uppercase;
+  transition: transform 80ms ease-in-out;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.verify-mail-container button:active {
+  transform: scale(0.95);
+  outline: none;
+}
+
+.verify-mail-container button:focus {
+  outline: none;
+}
+
+.verify-mail-container button:disabled {
+  background: #999999;
+  transform: none;
 }
 
 @media (max-width: 800px) {

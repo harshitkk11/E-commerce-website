@@ -1,13 +1,14 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import { Suspense, lazy, useEffect } from "react";
 import axios from "axios";
+
 import Navbar from "./components/Navbar";
 import { EmailContextProvider } from "./context/VerifyMailContext";
-
 const Home = lazy(() => import("./components/Home"));
 const Login = lazy(() => import("./components/Login"));
 const Signup = lazy(() => import("./components/Signup"));
 const VerifyMail = lazy(() => import("./components/VerifyMail"));
+const Verify = lazy(() => import("./components/Verify"));
 const PageNotFound = lazy(() => import("./components/PageNotFound"));
 
 axios.defaults.baseURL = import.meta.env.VITE_SERVER_URL;
@@ -63,6 +64,19 @@ function App() {
               ) : (
                 <Suspense>
                   <VerifyMail />
+                </Suspense>
+              )
+            }
+          />
+
+          <Route
+            path="/verify"
+            element={
+              verify != "true" ? (
+                <Navigate replace to="/signup" />
+              ) : (
+                <Suspense>
+                  <Verify />
                 </Suspense>
               )
             }
