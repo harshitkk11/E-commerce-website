@@ -1,20 +1,21 @@
 import { Navigate, Route, Routes } from "react-router-dom";
-import { Suspense, lazy, useEffect } from "react";
+import { Suspense, lazy, useContext, useEffect } from "react";
 import axios from "axios";
 
+import { UserContextProvider } from "./contexts/UserContexts";
 import Navbar from "./components/Navbar";
-import { EmailContextProvider } from "./context/VerifyMailContext";
-const Home = lazy(() => import("./components/Home"));
-const Login = lazy(() => import("./components/Login"));
-const Signup = lazy(() => import("./components/Signup"));
-const VerifyMail = lazy(() => import("./components/VerifyMail"));
-const Verify = lazy(() => import("./components/Verify"));
+import UserData from "./components/UserData";
+const Home = lazy(() => import("./pages/HomePage"));
+const Login = lazy(() => import("./pages/LoginPage"));
+const Signup = lazy(() => import("./pages/SignupPage"));
+const VerifyMail = lazy(() => import("./pages/VerifyMailPage"));
+const Verify = lazy(() => import("./pages/VerifyPage"));
 const PageNotFound = lazy(() => import("./components/PageNotFound"));
 
 axios.defaults.baseURL = import.meta.env.VITE_SERVER_URL;
 axios.defaults.withCredentials = true;
 
-function App() {
+const App = () => {
   const verify = localStorage.getItem("verify");
 
   useEffect(() => {
@@ -25,8 +26,9 @@ function App() {
   });
 
   return (
-    <EmailContextProvider>
+    <UserContextProvider>
       <>
+        <UserData />
         <Navbar />
         <Routes>
           <Route
@@ -92,8 +94,8 @@ function App() {
           />
         </Routes>
       </>
-    </EmailContextProvider>
+    </UserContextProvider>
   );
-}
+};
 
 export default App;

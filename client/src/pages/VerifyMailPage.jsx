@@ -1,10 +1,9 @@
 import { Link } from "react-router-dom";
 import Verification from "../assets/images/mail.png";
-import { useContext } from "react";
-import { EmailContext } from "../context/VerifyMailContext";
 
 const VerifyMail = () => {
-  const { email } = useContext(EmailContext);
+  const email = sessionStorage.getItem("email")
+  
   return (
     <div className="verifymail">
       <div className="verify-mail-container">

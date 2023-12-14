@@ -1,28 +1,19 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { BiSolidError } from "react-icons/bi";
-import { EmailContext } from "../context/VerifyMailContext";
 
-function Signup() {
+const Login = () => {
   const navigate = useNavigate();
 
-  const { setEmail } = useContext(EmailContext);
-
   const [form, setForm] = useState({
-    name: "",
     email: "",
     password: "",
-    button: "Sign Up",
+    button: "Log In",
     disabled: false,
     error: "",
     display: "none",
-    border: "",
   });
-
-  const handleClick = () => {
-    navigate("/login");
-  };
 
   const handleonChange = (e) => {
     setForm({
@@ -33,8 +24,7 @@ function Signup() {
 
   const sendRequest = async () => {
     const res = await axios
-      .post("/signup", {
-        name: form.name,
+      .post("/login", {
         email: form.email,
         password: form.password,
       })
@@ -53,90 +43,88 @@ function Signup() {
       disabled: true,
     });
     sendRequest().then((data) => {
-      if (data.message === "Signed up successfully") {
-        setEmail(form.email);
+      if (data.message === "Logged in successfully") {
         setForm({
           ...form,
-          name: "",
           email: "",
           password: "",
-          button: "Sign Up",
+          button: "Log in",
           disabled: false,
           error: "",
           display: "none",
-          border: "",
         });
+        console.log("logged in successfully");
+        localStorage.setItem("isauth", true);
+        navigate("/");
+        window.location.reload();
+      } else if (data.message === "Not verified") {
+        sessionStorage.setItem("email", form.email);
         localStorage.setItem("verify", "true");
         navigate("/verifymail");
         window.location.reload();
       } else {
-        console.log(data.message);
+        console.log(data.user);
         setForm({
           ...form,
-          button: "Sign Up",
+          button: "Log in",
           disabled: false,
           error: data.message,
           display: "flex",
-          border: "1px solid #b30000",
         });
         // toast.error(data.message);
       }
     });
   };
 
+  function handleClick() {
+    navigate("/signup");
+  }
+
   return (
     <div className="login-signup">
       <div className="container">
-        <div className="overlay-container">
-          <div className="overlay-panel">
-            <p className="overlay-heading">Already have an account?</p>
-            <span>To keep connected with us please login here !</span>
-            <button className="ghost" id="login" onClick={handleClick}>
-              LOG In
-            </button>
-          </div>
-        </div>
         <div className="form-container">
           <div className="flag-div">
             <div className="flag"></div>
           </div>
           <form onSubmit={handleSubmit}>
-            <p className="form-heading">Create An Account</p>
-            <span>Use your email for registration</span>
+            <p className="form-heading">Log In</p>
+            <span>Login to your Account</span>
             <span className="input-error" style={{ display: form.display }}>
               <BiSolidError style={{ fontSize: "20px" }} />
               {form.error}
             </span>
             <input
-              name="name"
-              type="text"
-              placeholder="NAME"
-              value={form.name}
-              onChange={handleonChange}
-              required
-              disabled={form.disabled}
-            />
-            <input
               name="email"
               type="email"
               placeholder="EMAIL"
               value={form.email}
-              onChange={handleonChange}
               required
+              autoComplete="email"
+              onChange={(e) => handleonChange(e)}
               disabled={form.disabled}
-              style={{
-                border: form.border,
-              }}
+              autoFocus
             />
             <input
               name="password"
               type="password"
               placeholder="PASSWORD"
               value={form.password}
-              onChange={handleonChange}
               required
+              autoComplete="current-password"
+              onChange={(e) => handleonChange(e)}
               disabled={form.disabled}
             />
+            <Link
+              style={{
+                textDecoration: "none",
+                fontSize: "17px",
+                margin: "15px 0",
+              }}
+              to="/forget-password"
+            >
+              Forgot Password?
+            </Link>
             <br />
             <button className="submit-button" disabled={form.disabled}>
               {form.button}
@@ -144,21 +132,30 @@ function Signup() {
           </form>
           <div className="ask">
             <span>
-              Already have an account?
+              Need an account?
               <Link
-                to="/login"
+                to="/signup"
                 style={{
                   marginLeft: "10px",
                   textDecoration: "none",
                 }}
               >
-                Log in
+                Sign up
               </Link>
             </span>
+          </div>
+        </div>
+        <div className="overlay-container">
+          <div className="overlay-panel">
+            <p className="overlay-heading">Create your Account</p>
+            <span>Enter your personal details here.</span>
+            <button className="ghost" id="signup" onClick={handleClick}>
+              Sign Up
+            </button>
           </div>
         </div>
       </div>
     </div>
   );
-}
-export default Signup;
+};
+export default Login;
