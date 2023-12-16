@@ -9,7 +9,7 @@ import { BiSolidError } from "react-icons/bi";
 const Verify = () => {
   const navigate = useNavigate();
   let [searchParams, setSearchParams] = useSearchParams();
-  const id = searchParams.get("id");
+  const token = searchParams.get("t");
   const [verifyBtn, setVerifyBtn] = useState({
     disabled: false,
     text: "Verify Email",
@@ -19,13 +19,15 @@ const Verify = () => {
 
   const handleClick = async (e) => {
     e.preventDefault();
+
     try {
       setVerifyBtn({
         ...verifyBtn,
         disabled: true,
         text: "Please Wait..",
       });
-      const verifyReq = await axios.post("/verify", { id });
+
+      const verifyReq = await axios.post("/verify", { token });
 
       if (verifyReq) {
         setVerifyBtn({

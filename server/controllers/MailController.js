@@ -1,6 +1,8 @@
 const nodemailer = require("nodemailer");
 const Mailgen = require("mailgen");
 const User = require("../models/UserModel")
+const jwt = require("jsonwebtoken");
+
 
 var transporter = nodemailer.createTransport({
   service: "Outlook365",
@@ -35,7 +37,10 @@ const verifyMailer = async (req, res) => {
       const user = await User.findOne({ email });
   
       if (user) {
-        var id = user._id;
+        const id = user._id;
+        var token = jwt.sign({ id }, process.env.JWT_SECRET_KEY, {
+          expiresIn: "5m",
+        });
       }
   
       var emailData = {
@@ -48,7 +53,7 @@ const verifyMailer = async (req, res) => {
             button: {
               color: "#22BC66",
               text: "Confirm your account",
-              link: "http://localhost:5173/verify?id=" + id + "",
+              link: "http://localhost:5173/verify?t=" + token + "",
             },
           },
         },

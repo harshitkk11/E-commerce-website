@@ -35,15 +35,29 @@ const Signup = async (req, res, next) => {
 };
 
 const verifyMail = async (req, res) => {
-  const { id } = req.body;
+  const { token } = req.body;
+
+  if (!token) {
+    return res.status(400).json({ message: "Something Went wrong" });
+  }
+
   try {
-    const user = await User.findByIdAndUpdate(
-      { _id: id },
-      { $set: { is_verified: 1 } }
-    );
-    if (user) {
-      return res.status(200).json({ message: "Email verified" });
+    jwt.verify(String(token), process.env.JWT_SECRET_KEY, async(err, user) => {
+      if (err) {
+        return res.status(400).json({ message: "Link Expired" });
+      }
+      const updateuser = await User.findByIdAndUpdate(
+        { _id: user.id },
+        { $set: { is_verified: 1 } }
+      );
+      if (updateuser) {
+        return res.status(200).json({ message: "Email verified" });
+      }
+      else {
+        return res.status(400).json({message: "Link Expired"})
+      }
     }
+    )
   } catch (error) {
     return res.status(400).json({ error: error.message });
   }
