@@ -1,10 +1,12 @@
 import { Navigate, Route, Routes } from "react-router-dom";
-import { Suspense, lazy, useContext, useEffect } from "react";
+import { Suspense, lazy, useEffect } from "react";
 import axios from "axios";
 
 import { UserContextProvider } from "./contexts/UserContexts";
+
 import Navbar from "./components/Navbar";
-import UserData from "./components/UserData";
+const UserData = lazy(() => import("./components/UserData"));
+const Admin = lazy(() => import("./pages/AdminPanel"));
 const Home = lazy(() => import("./pages/HomePage"));
 const Login = lazy(() => import("./pages/LoginPage"));
 const Signup = lazy(() => import("./pages/SignupPage"));
@@ -29,12 +31,12 @@ const App = () => {
     <UserContextProvider>
       <>
         <UserData />
-        <Navbar />
         <Routes>
           <Route
             path="/"
             element={
               <Suspense>
+                <Navbar />
                 <Home />
               </Suspense>
             }
@@ -44,6 +46,7 @@ const App = () => {
             path="/login"
             element={
               <Suspense>
+                <Navbar />
                 <Login />
               </Suspense>
             }
@@ -53,6 +56,7 @@ const App = () => {
             path="/signup"
             element={
               <Suspense>
+                <Navbar />
                 <Signup />
               </Suspense>
             }
@@ -65,6 +69,7 @@ const App = () => {
                 <Navigate replace to="/signup" />
               ) : (
                 <Suspense>
+                  <Navbar />
                   <VerifyMail />
                 </Suspense>
               )
@@ -78,6 +83,7 @@ const App = () => {
                 <Navigate replace to="/signup" />
               ) : (
                 <Suspense>
+                  <Navbar />
                   <Verify />
                 </Suspense>
               )
@@ -85,9 +91,19 @@ const App = () => {
           />
 
           <Route
+            path="/admin"
+            element={
+              <Suspense>
+                <Admin />
+              </Suspense>
+            }
+          />
+
+          <Route
             path="*"
             element={
               <Suspense>
+                <Navbar />
                 <PageNotFound />
               </Suspense>
             }
