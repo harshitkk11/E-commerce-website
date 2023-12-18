@@ -3,28 +3,45 @@
     background-color: black;
     color: white;
     height: 20vh;
+    display: flex;
+    flex-direction: row;
+    gap: 250px;
+   
+}
+.footer-left{
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
 }
 .about{
     margin-left: 60px;
-    background-color: red;
-    display:flow-root;
     width: fit-content;
 }
-h3{
+span{
     color: rgb(186, 186, 186);
-    display: block;
 }
-.about-nav{
+
+.nav{
     margin-top: 20px;
 
 }
-.about-nav li{
+li{
     list-style: none;
+    margin: 3px;
 }
 
-/* Help css */
 .help{
-    display: flex;
-    background-color: blue;
     width: fit-content;
 }
+
+/* footer right */
+.footer-right{
+    display: flex;
+    flex-direction: row;
+    gap: 60px;
+}
+.add{
+    /* padding-top: 20px; */
+}
+
+
