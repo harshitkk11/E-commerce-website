@@ -1,10 +1,33 @@
-import { NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Searchbar from "./Searchbar";
-import { VscAccount } from "react-icons/vsc";
 import { IoCartOutline } from "react-icons/io5";
+
+import DropDown from "./DropDown";
+import { useContext, useEffect, useState } from "react";
+import { UserContext } from "../contexts/UserContexts";
 
 const Navbar = () => {
   const navigate = useNavigate();
+  const { user } = useContext(UserContext);
+  const [dropdown, setDropdown] = useState({
+    link: "/login",
+    value: "Login",
+    displaysignup: "flex",
+    displaylogout: "none",
+  });
+
+  useEffect(() => {
+    if (user) {
+      setDropdown({
+        ...dropdown,
+        link: "#",
+        value: user.fname,
+        displaysignup: "none",
+        displaylogout: "block",
+      });
+    }
+  }, [user]);
+
   return (
     <>
       <div className="navbar">
@@ -15,75 +38,12 @@ const Navbar = () => {
           </div>
         </div>
         <div className="nav-items">
-          <div className="dropdown">
-            <button className="dropbtn" onClick={() => navigate("/login")}>
-              {" "}
-              <VscAccount style={{ fontSize: "21px" }} /> Login
-            </button>
-            <div className="dropdown-content">
-              <li>
-                <div className="option1">
-                  {/* <button onClick={() => navigate("/login")}>Login</button> */}
-                  <span>
-                    New Customer?
-                    <NavLink
-                      to="/signup"
-                      style={{ textDecoration: "none", color: "dodgerblue" }}
-                    >
-                      Sign Up
-                    </NavLink>
-                  </span>
-                </div>
-              </li>
-              <li>
-                <button className="option" onClick={() => navigate("/profile")}>
-                  My profile
-                </button>
-                {/* <NavLink
-                  to="/"
-                  style={{ textDecoration: "none", color: "black" }}
-                >
-                  My profile
-                </NavLink> */}
-              </li>
-              <li>
-                <button className="option" onClick={() => navigate("/order")}>
-                  Order
-                </button>
-                {/* <NavLink
-                  to="/"
-                  style={{ textDecoration: "none", color: "black" }}
-                >
-                  Order
-                </NavLink> */}
-              </li>
-              <li>
-                <button
-                  className="option"
-                  onClick={() => navigate("/wishlist")}
-                >
-                  Wishlist
-                </button>
-                {/* <NavLink
-                  to="/"
-                  style={{ textDecoration: "none", color: "black" }}
-                >
-                  whisList
-                </NavLink> */}
-              </li>
-              <li>
-                <button className="option" onClick={() => navigate("/")}>
-                  Logout
-                </button>
-                {/* <NavLink
-                  to="/"
-                  style={{ textDecoration: "none", color: "black" }}
-                >
-                  Log Out
-                </NavLink> */}
-              </li>
-            </div>
-          </div>
+          <DropDown
+            link={dropdown.link}
+            value={dropdown.value}
+            displaysignup={dropdown.displaysignup}
+            displaylogout={dropdown.displaylogout}
+          />
           <div className="Cart">
             <button onClick={() => navigate("/cart")}>
               <IoCartOutline style={{ fontSize: "23px", height: "100%" }} />

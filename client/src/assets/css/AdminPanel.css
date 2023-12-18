@@ -1,0 +1,28 @@
+.admin {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}
+
+.sidebar {
+  width: 25%;
+  height: 100vh;
+  background-color: #333333;
+}
+
+.sidebar-logo {
+  font-style: oblique;
+  color: #8080ff;
+  font-size: 22px;
+  font-weight: 700;
+  /* border: 1px solid; */
+  width: 100%;
+  height: 10%;
+  text-align: left;
+  padding: 10px 0 10px 30px;
+}
+
+.main-container {
+  width: 75%;
+  height: 100vh;
+}

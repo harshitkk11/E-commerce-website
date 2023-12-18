@@ -1,6 +1,6 @@
-import Product_struc from "./Product_struc";
-import Ads from "./Ads";
-import "../assets/css/Home.css"
+import Product_struc from "../components/Product_struc";
+import Ads from "../components/Ads";
+import "../assets/css/HomePage.css"
 
 function Home() {
 
