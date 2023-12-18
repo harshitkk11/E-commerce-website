@@ -1,0 +1,30 @@
+.footer{
+    padding-top: 40px;
+    background-color: black;
+    color: white;
+    height: 20vh;
+}
+.about{
+    margin-left: 60px;
+    background-color: red;
+    display:flow-root;
+    width: fit-content;
+}
+h3{
+    color: rgb(186, 186, 186);
+    display: block;
+}
+.about-nav{
+    margin-top: 20px;
+
+}
+.about-nav li{
+    list-style: none;
+}
+
+/* Help css */
+.help{
+    display: flex;
+    background-color: blue;
+    width: fit-content;
+}

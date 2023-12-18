@@ -4,15 +4,20 @@ import "../assets/css/Home.css"
 
 function Home() {
 
-    // const Data = async () => {
-    //     const url = "../data/fashion.csvv";
-    //     setLoading(true )
-    //     let data = await fetch(url);
-    //     let parsedData = await data.json();
-    //     setArticles(parsedData.articles);
-    //     setLoading(false);
-    //     settotalResults(parsedData.totalResults);
-    // }
+    fetch('https://raw.githubusercontent.com/YBI-Foundation/Dataset/main/Airline%20Delay.csv')
+        .then(response => response.text())
+        .then(data => {
+            // Log CSV data to the console
+            console.log(data);
+
+            // // Alternatively, you can parse and log the data as an array
+            // const rows = data.split('\n').map(row => row.split(','));
+            // console.log(rows);
+        })
+        .catch(error => console.error('Error fetching CSV:', error));
+
+
+
     return (
         <div className="home">
             <Ads/>
