@@ -3,6 +3,7 @@ import "../assets/css/Footer.css";
 function Footer() {
   return (
     <div className="footer">
+    <div className="footer-nav">
       <div className="footer-left">
         <div className="about">
           <span>ABOUT</span>
@@ -42,13 +43,15 @@ function Footer() {
           <span>Mail Us</span>
         </div>
         <div className="register">
-            <div className="add">
-               <span>Register offcie Address</span>
+          <span>Register offcie Address</span>
+            <div className="address">
                <p>Knowledge Park 2</p>
                <p>Greater Noida , Uttar Pardesh</p>
             </div>
         </div>
       </div>
+    </div>
+    <h5 className="span-copyright"> © 2023-2024, E-commerce.com </h5>
     </div>
   );
 }

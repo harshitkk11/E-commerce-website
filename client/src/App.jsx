@@ -6,6 +6,7 @@ import { UserContextProvider } from "./contexts/UserContexts";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer"
+import Forget from "./components/Forget"
 const UserData = lazy(() => import("./components/UserData"));
 const Admin = lazy(() => import("./pages/AdminPanel"));
 const Home = lazy(() => import("./pages/HomePage"));
@@ -60,6 +61,15 @@ const App = () => {
               <Suspense>
                 <Navbar />
                 <Signup />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/forget-password"
+            element={
+              <Suspense>
+                <Navbar />
+                <Forget />
               </Suspense>
             }
           />

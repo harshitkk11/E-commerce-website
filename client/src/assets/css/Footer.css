@@ -2,7 +2,9 @@
     padding-top: 40px;
     background-color: black;
     color: white;
-    height: 20vh;
+    height: 25vh;
+}
+.footer-nav{
     display: flex;
     flex-direction: row;
     gap: 250px;
@@ -40,8 +42,12 @@ li{
     flex-direction: row;
     gap: 60px;
 }
-.add{
-    /* padding-top: 20px; */
+.address{
+    margin-top: 20px;
+}
+h5{
+    text-align: center;
+    margin-top: 10px;
 }
 
 
