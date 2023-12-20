@@ -51,6 +51,13 @@ span{
     width: 500px;
     height: 40px;
     font-size: 1.3em;
-    background: #315dff;
-    color: #fff;
+    border-radius: 2em;
+    border: 0;
+    background: #21a9d3;
+    color: #ffffff;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in-out;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 }

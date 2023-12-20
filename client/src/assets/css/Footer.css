@@ -19,7 +19,7 @@
     margin-left: 60px;
     width: fit-content;
 }
-span{
+.footer-nav span{
     color: rgb(186, 186, 186);
 }
 
@@ -27,7 +27,7 @@ span{
     margin-top: 20px;
 
 }
-li{
+.nav li{
     list-style: none;
     margin: 3px;
 }
@@ -45,7 +45,7 @@ li{
 .address{
     margin-top: 20px;
 }
-h5{
+.span-copyright{
     text-align: center;
     margin-top: 10px;
 }
